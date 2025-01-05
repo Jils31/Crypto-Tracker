@@ -1,0 +1,1263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(47, 49, 84);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.one-end {
+  display: flex;
+  padding: 5rem;
+}
+.second-end {
+  padding: 5rem;
+}
+.fa-user {
+  color: white;
+  font-size: 30px;
+}
+.info {
+  flex-direction: column;
+  margin-left: 0.75rem;
+}
+.options {
+  width: 40rem;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: rgb(84, 82, 118);
+  padding: 0.7rem;
+  border-radius: 10px;
+}
+.options p {
+  background-color: rgb(84, 82, 118);
+  color: gray;
+  font-weight: bold;
+}
+.options p:hover {
+  color: white;
+  cursor: pointer;
+}
+.first-content {
+  padding-left: 5rem;
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.port-val {
+  width: 30rem;
+  height: 7rem;
+  background-color: #43476d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text {
+  color: #cfcfd5;
+  background-color: #43476d;
+}
+
+.text .title {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  background-color: #43476d;
+}
+
+.text .value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  background-color: #43476d;
+}
+
+.button {
+  width: 8rem;
+  background-color: #36d399;
+  color: white;
+  padding: 0.5rem 2rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.summary {
+  background-color: #43476d;
+  width: 46rem;
+  height: 7rem;
+  margin-left: 5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+.fa-up-long, .fa-down-long {
+  color: white;
+  background-color: #14151a;
+  padding: 1rem;
+  border-radius: 5px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.assets {
+  background-color: #43476d;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.assets .paras {
+  background-color: #43476d;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: white;
+}
+
+.assets .paras p {
+  background-color: #43476d;
+  color: white;
+}
+
+.second-cont {
+  padding-left: 5rem;
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4.7rem;
+}
+
+.first-part {
+  margin-top: 0rem;
+}
+
+.wallet-overview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #43476d;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-left: 10px;
+  width: 30rem;
+  height: 18rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.wallet-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #43476d;
+}
+
+.wallet-details h3 {
+  font-size: 1.5rem;
+  margin-top: -3rem;
+  background-color: #43476d;
+  color: white;
+}
+
+.crypto-details {
+  margin-top: 4rem;
+  display: flex;
+  background-color: #43476d;
+}
+
+.crypto {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  background-color: #43476d;
+  display: flex;
+  flex-direction: column;
+}
+
+.crypto .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.span {
+  background-color: #43476d;
+  margin-right: 10px;
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.amount {
+  font-size: 15px;
+  color: #cfcfd5;
+  background-color: #43476d;
+}
+
+.chart-container {
+  width: 10rem;
+  height: 10rem;
+}
+
+#walletChart {
+  background-color: #43476d;
+}
+
+.card {
+  background-color: #43476d;
+  color: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  width: 30rem;
+  height: 10rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 2rem;
+  margin-left: 10px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #43476d;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  background-color: #43476d;
+}
+
+.card-header h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  background-color: #43476d;
+}
+
+.card-header .balance {
+  color: #1fe426;
+  font-size: 1.7rem;
+  font-weight: bold;
+  background-color: #43476d;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  background-color: #43476d;
+}
+
+.card-content div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #43476d;
+}
+
+.card-content div span {
+  font-size: 1.5rem;
+  color: #a9a9b8;
+  margin-bottom: 5px;
+  background-color: #43476d;
+}
+
+.card-content div .value {
+  color: #fff;
+  font-weight: bold;
+}
+
+.chart-card {
+  background: linear-gradient(135deg, #5512d1, #0609ae, #0937aa);
+  color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  width: 46rem;
+  height: 30rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.chart-header {
+  background: linear-gradient(135deg, #5512d1, #0609ae);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.chart-cont {
+  background: linear-gradient(135deg, #5512d1, #5512d1, rgb(54, 15, 196));
+}
+
+.chart-cont h3{
+  background: linear-gradient(135deg, #5512d1, #5512d1, rgb(54, 15, 196));
+}
+
+
+.chart-header .timeframe {
+  background: linear-gradient(90deg, #1abc9c, #16a085);
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+#myChart {
+  background: linear-gradient(135deg, #5512d1, #0609ae, #0937aa);
+  width: 100%;
+  height: 300px;
+}
+
+.third-cont {
+  padding-left: 5rem;
+  padding-top: 2rem;
+  gap: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.third-first {
+  width: 35rem;
+  height: 25rem;
+  background-color: #43476d;
+  border-radius: 1.5rem;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+.third-first h2 {
+  color: white;
+  background-color: #43476d;
+  padding: 1rem;
+}
+
+#priceChart {
+  background-color: #43476d;
+  padding: 0.5rem;
+}
+
+.third-second {
+  width: 21rem;
+  height: 25rem;
+  background-color: #43476d;
+  border-radius: 1.5rem;
+}
+
+.news-section {
+  background-color: #43476d;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.news-section h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: white;
+  background-color: #43476d;
+}
+
+.global-news {
+  background-color: #43476d;
+  color: #ffffff;
+  padding: 10px;
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.global-item {
+  margin-bottom: 10px;
+}
+
+.global-item h3 {
+  margin: 0;
+  background-color: #43476d;
+  font-size: 21px;
+  font-weight: bold;
+  color: #09eddd;
+  transition: color 0.3s ease;
+}
+
+.global-item h3:hover {
+  color: #ffffff;
+  text-shadow: 0 2px 5px rgba(9, 237, 221, 0.8);
+  cursor: pointer;
+  animation: glow 1s infinite alternate;
+}
+
+/* Glowing animation */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #09eddd, 0 0 10px #09eddd, 0 0 20px #09eddd;
+  }
+  50% {
+    text-shadow: 0 0 15px #09eddd, 0 0 30px #09eddd, 0 0 50px #09eddd;
+  }
+  100% {
+    text-shadow: 0 0 5px #09eddd, 0 0 10px #09eddd, 0 0 20px #09eddd;
+  }
+}
+
+.third-third {
+  width: 21rem;
+  height: 25rem;
+  background-color: #43476d;
+  border-radius: 1.5rem;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+
+.third-third h2 {
+  color: white;
+  background-color: #43476d;
+  padding: 20px;
+}
+table{
+  margin:10px;
+}
+
+table,
+table th,
+table td,
+table tr {
+  background-color: #43476d;
+}
+table tr td div,
+table tr td div span {
+  background-color: #43476d;
+}
+table td {
+  padding: 0.3rem;
+}
+.heading {
+  font-size: 20px;
+}
+.coin-icon {
+  height: 25px;
+  background-color: #43476d;
+}
+.icon-name {
+  background-color: #43476d;
+  color: white;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-top: 2px;
+}
+
+.fourth-cont {
+  padding-left: 5rem;
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+  gap: 2.5rem;
+}
+
+.fourth-first-part {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.part1 {
+  width: 42rem;
+  height: 10rem;
+  background-color: #43476d;
+  border-radius: 1.5rem;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+.child {
+  background-color: #43476d;
+}
+.child h2 {
+  color: white;
+  background-color: #43476d;
+  padding: 1rem;
+}
+.child input {
+  color: white;
+  width: 15rem;
+  padding: 0.4rem;
+  font-size: 1rem;
+  margin: 0rem 1rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.child1 {
+  background-color: #43476d;
+}
+.fa-arrow-right {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #43476d;
+}
+select {
+  color: white;
+  padding: 0.4rem;
+  font-size: 1rem;
+  margin: 0rem 1rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+}
+.converted-answer {
+  background-color: #43476d;
+  color: white;
+  margin-left: 2rem;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.part2 {
+  padding: 15px;
+  background-color: #43476d;
+  border-radius: 15px;
+  color: white;
+  width: 42rem;
+  height: 20rem;
+}
+
+.part2 h2{
+  background-color: #43476d;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.part2 .input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #43476d;
+}
+
+.part2 label {
+  flex: 0 0 180px;
+  color: #f2f1f1;
+  font-size: 14px;
+  background-color: #43476d;
+}
+
+.part2 input {
+  flex: 0 0 200px;
+  padding: 8px;
+  background-color: #2a2d3e;
+  border: 1px solid #666;
+  border-radius: 5px;
+  color: white;
+  font-size: 13px;
+}
+
+.part2 input:focus {
+  outline: none;
+  border-color: #7367f0;
+}
+
+.part2 input::placeholder {
+  color: #8a8a8a;
+}
+
+/* New styles for button and result container */
+.result-container {
+  background-color: #43476d;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.part2 button {
+  width: 150px;
+  padding: 10px;
+  background-color: #7367f0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.part2 button:hover {
+  background-color: #635ac7;
+}
+
+.part2 #result {
+  padding: 10px;
+  background-color: #43476d;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  min-width: 150px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-top: 15px;
+  background-color: #43476d;
+}
+
+#news-container {
+  margin-top: 20px;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.news-item h2 {
+  font-size: 18px;
+  color: #007bff;
+}
+
+.news-item p {
+  font-size: 14px;
+  color: #555;
+}
+
+.news-item a {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.news-item a:hover {
+  text-decoration: underline;
+}
+
+.fourth-second-part {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.part11 {
+  width: 38rem;
+  height: 20rem;
+  background-color: #43476d;
+  border-radius: 1.5rem;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+
+.fourthchild1 {
+  display: flex;
+  background-color: #43476d;
+}
+
+.wallet-balance {
+  color: white;
+  background-color: #43476d;
+  padding: 1rem;
+  
+}
+.coin-details {
+  padding: 1rem;
+  background-color: #43476d;
+}
+.crypto-icon {
+  color: orange;
+  background-color: #43476d;
+  font-size: 25px;
+  font-weight: bold;
+}
+.crypto-value {
+  color: white;
+  background-color: #43476d;
+  font-weight: bold;
+  margin-left: 5px;
+  font-size: 25px;
+}
+
+.crypto-type {
+  color: orange;
+  background-color: #43476d;
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.button-details {
+  margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #43476d;
+  margin-left: 5rem;
+  gap: 0.5rem;
+}
+#deposit {
+  color: rgb(159, 157, 201);
+  padding: 1rem;
+  width: 12rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  border: 2px solid rgb(159, 157, 201);
+  cursor: pointer;
+}
+
+#withdraw {
+  background-color: rgb(159, 157, 201);
+  color: #43476d;
+  padding: 1rem;
+  width: 12rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.fourthchild2 {
+  display: flex;
+  background-color: #43476d;
+}
+
+.order-details {
+  background-color: #43476d;
+  padding: 1rem;
+}
+.order {
+  background-color: #43476d;
+  color: white;
+  margin-bottom: 1rem;
+}
+.buy-sell {
+  display: flex;
+  gap: 1.5rem;
+  background-color: #43476d;
+}
+.buy {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #43476d;
+}
+.buy span,
+.sell span {
+  background-color: #43476d;
+}
+.sell {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #43476d;
+}
+.chart-wrapper {
+  background-color: #43476d;
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  margin-left: 8rem;
+  margin-top: 0.5rem;
+  height: 150px;
+}
+
+.part22 {
+  width: 38rem;
+  height: 10rem;
+  background-color: #43476d;
+  border-radius: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+.open{
+  background-color: #43476d;
+  color: white;
+  padding: 1.5rem;
+}
+.open-details {
+  margin-top: 1rem;
+}
+.open-details,
+.open-details span {
+  background-color: #43476d;
+}
+.open-details span {
+  color: white;
+  padding: 1rem;
+  margin: 1rem;
+}
+.numbers {
+  font-size: 30px;
+}
+
+.update-btn {
+    padding: 8px 16px;
+    background-color: #43476d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.update-btn:hover {
+    background-color: #363857;
+}
+
+.portfolio-form {
+    margin: 20px 0;
+    display: none;
+}
+
+.portfolio-form input {
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #43476d;
+}
+
+.portfolio-form button {
+    padding: 8px 16px;
+    background-color: #36d339;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.portfolio-form button:hover {
+    background-color: #2fb532;
+}
+
+/* Add these styles for the modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #43476d;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.portfolio-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.portfolio-form h3 {
+    color: white;
+    margin: 0 0 20px 0px;
+    text-align: center;
+    background-color: #43476d;
+}
+
+.portfolio-form input {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #43476d;
+    background-color: #43476d;
+    color: white;
+    margin-left: 1rem;
+}
+
+.portfolio-form input::placeholder {
+    color: #8a8ca0;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.modal-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-buttons button:first-child {
+    background-color: #36d339;
+    color: white;
+}
+
+.modal-buttons button:first-child:hover {
+    background-color: #2fb532;
+}
+
+/* Add these styles for the summary section */
+.summary .update-btn {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    background-color: #43476d;
+    color: white;
+}
+
+.summary-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.summary-form h3 {
+    color: white;
+    margin: 0 0 20px 0;
+    text-align: center;
+}
+
+.summary-form input {
+    margin: 10px;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #43476d;
+    background-color: #43476d;
+    color: white;
+}
+
+.summary-form input::placeholder {
+    color: #8a8ca0;
+}
+
+/* Update modal styles */
+#orders-modal.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#orders-modal .modal-content {
+    background-color: #43476d;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+}
+
+.orders-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.orders-form h3 {
+    color: white;
+    margin: 0 0 20px 0;
+    text-align: center;
+    background-color: #43476d;
+    font-size: 1.5rem;
+}
+
+.orders-form input {
+    padding: 12px;
+    margin:10px;
+    border-radius: 6px;
+    border: 1px solid #43476d;
+    background-color: #43476d;
+    color: white;
+    font-size: 1rem;
+}
+
+.orders-form input::placeholder {
+    color: #8a8ca0;
+}
+
+.orders-form .modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.orders-form .modal-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #36d339;
+    color: white;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.orders-form .modal-buttons button:hover {
+    background-color: #2fb532;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #43476d;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 500px;
+}
+
+.balance-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.balance-form h3 {
+  color: white;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.balance-form input {
+  padding: 0.8rem;
+  border: 1px solid #666;
+  border-radius: 0.5rem;
+  background-color: #43476d;
+  color: white;
+  margin: 10px;
+}
+
+.balance-form input::placeholder {
+  color: #888;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.modal-buttons button {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-buttons button:hover {
+  background-color: #45a049;
+}
+
+.wallet-input-group {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem;
+    
+}
+
+.crypto-select {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #666;
+    border-radius: 0.5rem;
+    background-color: #2c2f44;
+    color: white;
+}
+
+.crypto-amount {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #666;
+    border-radius: 0.5rem;
+    background-color: #2c2f44;
+    color: white;
+}
+
+.add-crypto-btn, .remove-crypto-btn {
+  width: 25.5rem;
+  padding: 8px;
+  margin: 5px 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-crypto-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.remove-crypto-btn {
+  background-color: #ff4444;
+  color: white;
+}
+
+.add-crypto-btn:hover {
+  background-color: #45a049;
+}
+
+.remove-crypto-btn:hover {
+  background-color: #cc0000;
+}
+
+.wallet-input-group {
+  margin-bottom: 10px;
+}
+
+.wallet-balance-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin-left: 18px;
+}
+
+.wallet-balance-form h3 {
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.wallet-balance-form input {
+    padding: 8px;
+    border: 1px solid #43476d;
+    border-radius: 4px;
+    background-color: #1f2137;
+    color: white;
+}
+
+.wallet-balance-form input::placeholder {
+    color: #8a8da8;
+}
+
+.wallet-balance-form .modal-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.wallet-balance-form .modal-buttons button {
+    padding: 8px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.wallet-balance-form .modal-buttons button:hover {
+    background-color: #45a049;
+}
+
+.orderbook-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin-left: 18px;
+}
+
+.orderbook-form h3 {
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.orderbook-form input {
+    padding: 8px;
+    border: 1px solid #43476d;
+    border-radius: 4px;
+    background-color: #1f2137;
+    color: white;
+}
+
+.orderbook-form input::placeholder {
+    color: #8a8da8;
+}
+
+.orderbook-form .modal-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.orderbook-form .modal-buttons button {
+    padding: 8px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.orderbook-form .modal-buttons button:hover {
+    background-color: #45a049;
+}
+
+#update-orderbook {
+    margin: 10px 0;
+    width: 100%;
+}
+

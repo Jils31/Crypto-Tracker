@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Tracker</title>
+    <script
+      src="https://kit.fontawesome.com/589957875e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="one-end">
+        <div class="user-profile">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="info">
+          <p style="color: white">John Doe</p>
+          <p style="color: rgb(124, 116, 116)">
+            Account Rating: <b>9.0 Trustworthy</b>
+          </p>
+        </div>
+      </div>
+
+      <div class="second-end">
+        <div class="options">
+          <p>Dashboard</p>
+          <p>Exchange</p>
+          <p>Liquidity Pools</p>
+          <p>Farming</p>
+          <p>Settings</p>
+        </div>
+      </div>
+    </div>
+    <!--Portfolio Value-->
+    <div class="first-content">
+      <div class="port-val">
+        <div class="text">
+          <span class="title">Your Portfolio Value</span><br /><br />
+          <span class="value" id="portfolio-value">$0.00</span>
+        </div>
+        <div class="button" id="portfolio-percentage">0.00%</div>
+        <button id="update-button" class="update-btn" style="background-color: #7367f0;">Update Portfolio</button>
+        <div class="modal-overlay" id="modal-overlay" style="display: none;">
+          <div class="modal-content">
+            <div class="portfolio-form">
+              <h3>Update Portfolio</h3>
+              <input type="number" id="new-value" placeholder="Enter new portfolio value" step="0.01" min="0">
+              <input type="number" id="percentage-change" placeholder="Enter percentage change" step="0.01">
+              <div class="modal-buttons">
+                <button onclick="updatePortfolio()">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <!--Summary of the trades-->
+      <div class="summary">
+        <div class="assets">
+          <i class="fa-solid fa-up-long"></i>
+          <div class="paras">
+            <p style="font-weight: bolder; font-size: 24px" id="total-sales">$0.00</p>
+            <p style="opacity: 0.6">Total Sales</p>
+          </div>
+        </div>
+
+        <div class="assets">
+          <i class="fa-solid fa-down-long"></i>
+          <div class="paras">
+            <p style="font-weight: bolder; font-size: 24px" id="trade-count">0</p>
+            <p style="opacity: 0.6">No. of Trades</p>
+          </div>
+        </div>
+
+        <div class="assets">
+          <i class="fa-solid fa-up-long"></i>
+          <div class="paras">
+            <p style="font-weight: bolder; font-size: 24px" id="active-pools">0</p>
+            <p style="opacity: 0.6">Active Pools</p>
+          </div>
+        </div>
+
+        <div class="assets">
+          <i class="fa-solid fa-up-long"></i>
+          <div class="paras">
+            <p style="font-weight: bolder; font-size: 24px" id="avg-return">0%</p>
+            <p style="opacity: 0.6">Avg Return</p>
+          </div>
+        </div>
+
+        <button id="update-summary" class="update-btn" style="background-color: #7367f0;">Update Summary</button>
+      </div>
+    </div>
+
+    <!--Wallet Overview-->
+    <div class="second-cont">
+      <div class="first-part">
+        <div class="wallet-overview">
+          <div class="wallet-details">
+            <h3 style="color: white;">Wallet Overview</h3>
+            <button id="update-wallet" class="update-btn" style="margin-top: 1rem; width: 60%;background-color: #7367f0;" >Update Wallet</button>
+            <div class="crypto-details">
+              <!-- Dynamic content will be added here by JavaScript -->
+            </div>
+          </div>
+          <div class="chart-container">
+            <canvas id="walletChart"></canvas>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h2>Balance</h2>
+            <div class="balance" id="total-balance">$ 0.00</div>
+          </div>
+          <div class="card-content">
+            <div>
+              <span>Income</span>
+              <div class="value" id="income-value">$0.00</div>
+            </div>
+            <button id="update-balance" class="update-btn" style="margin-top: 30px; background-color: #7367f0;">Update Balance</button>
+            <div>
+              <span>Expenses</span>
+              <div class="value" id="expense-value">$0.00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="second-part">
+        <div class="chart-card" style="margin-right: 10px;">
+          <div class="chart-header">
+            <div class="chart-cont">
+              <h3>View detailed trends and market liquidity over time</h3>
+            </div>
+            <div class="timeframe">24 h</div>
+          </div>
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="third-cont">
+      <div class="third-first">
+        <h2>Crypto Market Cap</h2>
+        <select name="converter" id="cryptoselect">
+          <option value="bitcoin">Bitcoin BTC</option>
+          <option value="ethereum">Ethereum ETH</option>
+          <option value="tron">Tron TRX</option>
+          <option value="tether">Tether USDT</option>
+          <option value="binancecoin">Binance BNB</option>
+          <option value="solana">Solana SOL</option>
+          <option value="ripple">Ripple XRP</option>
+
+        </select><br>
+
+        <canvas id="priceChart"></canvas>
+      </div>
+      <div class="third-second">
+        <div class="news-section">
+          <h2>Trending Cryptocurrencies</h2>
+          <div class="news-container" id="news-container">
+            <!-- Trending cryptocurrencies will be dynamically added here -->
+          </div>
+        </div>
+        
+      </div>
+      <div class="third-third">
+        <h2>Crypto Pricing</h2>
+        <table class="crypto-prices">
+          <thead>
+            <tr class="heading">
+              <th>#</th>
+              <th>Coin</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="color: white;">1</td>
+              <td>
+                <div style="display: flex;">
+                  <span><img src="bitcoin-icon.png" alt="BTC" class="coin-icon"></span>
+                  <span class="icon-name">Bitcoin BTC</span>
+                </div>
+              </td>
+              <td id="btc-price">Loading...</td>
+            </tr>
+            <tr>
+              <td style="color: white;">2</td>
+              <td>
+                <div style="display: flex;">
+                  <span><img src="ethereum-icon.png" alt="ETH" class="coin-icon"></span>
+                  <span class="icon-name">Ethereum ETH</span>
+                </div>
+              </td>
+              <td id="eth-price">Loading...</td>
+            </tr>
+            <tr>
+              <td style="color: white;">3</td>
+              <td>
+                <div style="display: flex;">
+                  <span><img src="usdt-icon.png" alt="USDT" class="coin-icon"></span>
+                  <span class="icon-name">Tether USDT</span>
+                </div>
+              </td>
+              <td id="usdt-price">Loading...</td>
+            </tr>
+            <tr>
+              <td style="color: white;">4</td>
+              <td>
+                <div style="display: flex;">
+                  <span><img src="tron-icon.png" alt="TRX" class="coin-icon"></span>
+                  <span class="icon-name">Tron TRX</span>
+                </div>
+              </td>
+              <td id="trx-price">Loading...</td>
+            </tr>
+            <tr>
+              <td style="color: white;">5</td>
+              <td>
+                <div style="display: flex;">
+                  <span><img src="binance-icon.png" alt="BNB" class="coin-icon"></span>
+                  <span class="icon-name">Binance BNB</span>
+                </div>
+              </td>
+              <td id="bnb-price">Loading...</td>
+            </tr>
+            <tr>
+              <td style="color: white;">6</td>
+              <td>
+                <div style="display: flex;">
+                  <span><img src="solana-icon.png" alt="SOL" class="coin-icon"></span>
+                  <span class="icon-name">Solana SOL</span>
+                </div>
+              </td>
+              <td id="sol-price">Loading...</td>
+            </tr>
+            <tr>
+              <td style="color: white;">7</td>
+              <td>
+                <div style="display: flex;">
+                  <span><img src="xrp-icon.png" alt="XRP" class="coin-icon"></span>
+                  <span class="icon-name">Ripple XRP</span>
+                </div>
+              </td>
+              <td id="xrp-price">Loading...</td>
+            </tr>
+          </tbody>
+        </table>
+        
+      </div>
+    </div>
+
+    <div class="fourth-cont">
+      <div class="fourth-first-part">
+        <div class="part1">
+          <div class="child">
+            <h2>Currency Converter</h2>
+            <input type="text" placeholder="Amount" id="amount" />
+          </div>
+          <div class="child1" id="swap-container">
+            <select name="converter" id="cryptoselect" class="crypto1">
+              <option value="BTC">BTC</option>
+              <option value="ETH">ETH</option>
+              <option value="TRX">TRX</option>
+              <option value="USDT">USDT</option>
+              <option value="DogeCoin">DogeCoin</option>
+            </select>
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+            <select name="converter1" id="currencyselect" class="currency1">
+              <option value="USD">United State Dollar $ (USD)</option>
+              <option value="INR">Indian Rupee ₹ (INR)</option>
+              <option value="EURO">European Pound € (EUR)</option>
+              <option value="AED">United Arab Emirates Dirham (AED)</option>
+            </select>
+            <span class="converted-answer"></span>
+          </div>
+        </div>
+        <div class="part2">
+          <h2>Mining Calculator</h2>
+          <div class="input-group">
+            <label for="hashrate">Hash Rate (H/s):</label>
+            <input type="number" id="hashrate" placeholder="Enter your hash rate">
+          </div>
+          
+          <div class="input-group">
+            <label for="power">Power Consumption (W):</label>
+            <input type="number" id="power" placeholder="Enter power consumption">
+          </div>
+          
+          <div class="input-group">
+            <label for="cost">Electricity Cost (per kWh):</label>
+            <input type="number" id="cost" placeholder="Enter electricity cost">
+          </div>
+          
+         
+          <div class="input-group">
+            <label for="price">Current Price (USD):</label>
+            <input type="number" id="price" placeholder="Enter coin price">
+          </div>
+          
+          <div class="result-container">
+            <button onclick="calculateProfit()">Expected Profit</button>
+            <p id="result"></p>
+          </div>
+        </div>
+      </div>
+      <div class="fourth-second-part">
+        <div class="part11">
+          <h2 class="wallet-balance">Wallet Balance</h2>
+          <div class="fourthchild1">
+            <div class="coin-details">
+              <span class="crypto-icon">₿</span>
+              <span class="crypto-value" id="btc-balance">2.5</span>
+              <span class="crypto-type">BTC</span>
+
+              <span class="crypto-icon">💲</span>
+              <span class="crypto-value" id="usdt-balance" style="margin-left: -2px">25,000</span>
+              <span class="crypto-type" style="color: rgb(11, 240, 11)">USDT</span>
+            </div>
+            <div class="button-details">
+              <button id="deposit" class="action-btn">Deposit Funds</button>
+              <button id="withdraw" class="action-btn">Withdraw</button>
+            </div>
+          </div>
+
+          <div class="fourthchild2">
+            <div class="order-details">
+              <h3 class="order">Order Book</h3>
+              <div class="buy-sell">
+                <div class="buy">
+                  <span>Buy Orders:</span>
+                  <span id="buy-orders-count" style="font-size: 30px; font-weight: bold; color: rgb(243, 95, 213)">0</span>
+                </div>
+                <div class="sell">
+                  <span>Sell Orders:</span>
+                  <span id="sell-orders-count" style="font-size: 30px; font-weight: bold; color: rgb(236, 162, 66)">0</span>
+                </div>
+                
+              </div>
+              <button id="update-orderbook" class="update-btn" style="margin-top: 15px; background-color: #7367f0;">Update Order Book</button>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="gradientChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="part22">
+          <div class="open">
+            <h2 style='background-color: #43476d;'>Orders</h2>
+            <div class="open-details">
+              <span>Total Orders: <span class="numbers" id="total-orders">0</span></span>
+              <span>Executed Orders: <span class="numbers" id="executed-orders">0</span></span>
+            </div>
+          </div>
+          <div style="text-align: right; background-color: #43476d;">
+            <button id="update-orders" class="update-btn" style="margin-top: -25px;margin-right: 15px; background-color: #7367f0;">Update Orders</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add this modal for summary updates -->
+    <div class="modal-overlay" id="summary-modal" style="display: none;">
+      <div class="modal-content">
+        <div class="summary-form">
+          <h3>Update Summary</h3>
+          <input type="number" id="new-sales" placeholder="Enter total sales" step="0.01" min="0">
+          <input type="number" id="new-trades" placeholder="Enter number of trades" step="1" min="0">
+          <input type="number" id="new-pools" placeholder="Enter active pools" step="1" min="0">
+          <input type="number" id="new-return" placeholder="Enter average return %" step="0.01">
+          <div class="modal-buttons">
+            <button onclick="updateSummary()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add modal for orders update -->
+    <div class="modal-overlay" id="orders-modal" style="display: none;">
+      <div class="modal-content">
+        <div class="orders-form">
+          <h3>Update Orders</h3>
+          <input type="number" id="new-total-orders" placeholder="Enter total orders" min="0">
+          <input type="number" id="new-executed-orders" placeholder="Enter executed orders" min="0">
+          <div class="modal-buttons">
+            <button onclick="updateOrders()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add modal for balance update -->
+    <div class="modal-overlay" id="balance-modal" style="display: none;">
+      <div class="modal-content">
+        <div class="balance-form">
+          <h3>Update Balance</h3>
+          <input type="number" id="new-balance" placeholder="Enter total balance" step="0.01" min="0">
+          <input type="number" id="new-income" placeholder="Enter income" step="0.01" min="0">
+          <input type="number" id="new-expenses" placeholder="Enter expenses" step="0.01" min="0">
+          <div class="modal-buttons">
+            <button onclick="updateBalance()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add this modal at the bottom with other modals -->
+    <div class="modal-overlay" id="wallet-modal" style="display: none;">
+      <div class="modal-content">
+        <div class="wallet-form">
+          <h3 style="color: white;">Update Wallet</h3>
+          <div id="wallet-inputs">
+            <div class="wallet-input-group">
+              <select class="crypto-select">
+                <option value="BTC">Bitcoin (BTC)</option>
+                <option value="ETH">Ethereum (ETH)</option>
+                <option value="TRX">Tron (TRX)</option>
+                <option value="USDT">Tether (USDT)</option>
+                <option value="BNB">Binance (BNB)</option>
+              </select>
+              <input type="number" class="crypto-amount" placeholder="Enter amount in USD" step="0.01" min="0">
+            </div>
+          </div>
+          <button onclick="addMoreCrypto()" class="add-crypto-btn">+ Add Another Cryptocurrency</button>
+          <button onclick="removeCrypto()" class="remove-crypto-btn">- Remove Last Cryptocurrency</button>
+          <div class="modal-buttons">
+            <button onclick="updateWallet()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add this modal at the bottom with other modals -->
+    <div class="modal-overlay" id="wallet-balance-modal" style="display: none;">
+      <div class="modal-content">
+        <div class="wallet-balance-form">
+          <h3>Update Wallet Balance</h3>
+          <input type="number" id="btc-amount" placeholder="Enter BTC amount" step="0.001" min="0">
+          <input type="number" id="usdt-amount" placeholder="Enter USDT amount" step="0.01" min="0">
+          <div class="modal-buttons">
+            <button onclick="updateWalletBalance()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add this modal for withdraw -->
+    <div class="modal-overlay" id="withdraw-modal" style="display: none;">
+      <div class="modal-content">
+        <div class="wallet-balance-form">
+          <h3>Withdraw Funds</h3>
+          <input type="number" id="btc-withdraw" placeholder="Enter BTC amount" step="0.00001" min="0">
+          <input type="number" id="usdt-withdraw" placeholder="Enter USDT amount" step="0.01" min="0">
+          <div class="modal-buttons">
+            <button onclick="processWithdraw()">Withdraw</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add this modal for order book updates -->
+    <div class="modal-overlay" id="orderbook-modal" style="display: none;">
+      <div class="modal-content">
+        <div class="orderbook-form">
+          <h3>Update Order Book</h3>
+          <input type="number" id="buy-orders" placeholder="Enter number of buy orders" min="0">
+          <input type="number" id="sell-orders" placeholder="Enter number of sell orders" min="0">
+          <div class="modal-buttons">
+            <button onclick="updateOrderBook()">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="portfolio.js"></script>
+    <script src="summary.js"></script>
+    <script src="balance.js"></script>
+    <script src="wallet-overview.js"></script>
+    <script src="chart.js"></script>
+    <script src="marketcap.js"></script>
+    <script src="trends.js"></script>
+    <script src="prices.js"></script>
+    <script src="currencyconverter.js"></script>
+    <script src="wallet-balance.js"></script>
+    <script src="orderbook.js"></script>
+    <script src="mining-calc.js"></script>
+    <script src="orders.js"></script>
+    
+  </body>
+</html>
